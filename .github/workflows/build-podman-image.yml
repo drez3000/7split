@@ -1,0 +1,26 @@
+name: Build Podman Image
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-podman-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install podman
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends podman
+
+      - name: Build Image
+        run: |
+          set -euo pipefail
+          podman build --platform linux/amd64 -t test-image .
+          echo "✅ Built podman image"
