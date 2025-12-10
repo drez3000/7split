@@ -9,7 +9,7 @@ Based on [ffmpeg](https://ffmpeg.org/) and [imagemagick](https://imagemagick.org
 
 ## Options:
 ```
-Usage: 7split.sh <input.mp4> <output.png> [OPTIONS]"
+Usage: 7split.sh <input.mp4> <output.png> [OPTIONS]
 
 Options:
   -h, --help                  Display this help message.
